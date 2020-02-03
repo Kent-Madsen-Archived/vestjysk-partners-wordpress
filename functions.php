@@ -24,7 +24,8 @@ function register_menus()
 {
     register_nav_menus( array( 'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ), 
                                'footer-menu' => __( 'Footer Main Area Menu', 'theme-menu' ), 
-                               'social-menu' => __( 'Social media menu', 'theme-menu' ), ) );
+                               'social-menu' => __( 'Social media menu', 'theme-menu' ), 
+                               'misc-menu' => __( 'Misc menu', 'theme-menu' ), ) );
 
     
 };
@@ -64,9 +65,7 @@ function theme_style()
                        
     wp_enqueue_style( 'google fonts', 
                        'https://fonts.google.com/?selection.family=Open+Sans|Roboto', 
-                       null, 
-                       null, 
-                       null );
+                       false );
     
 };
 

@@ -21,17 +21,19 @@
 
     <body>
         <header> 
-            <?php 
-                if ( has_nav_menu('header-menu') )
-                {
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'header-menu',
-                            'menu-class' => '',
-                            'item_spacing' => 'preserve'
-                        )
-                    );  
-                }
-            ?>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+                <?php 
+                    if ( has_nav_menu('header-menu') )
+                    {
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'header-menu',
+                                'menu-class' => '',
+                                'item_spacing' => 'preserve'
+                            )
+                        );  
+                    }
+                ?>
+            </nav>
             
         </header>
