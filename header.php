@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-    <head <?php language_attributes(); ?>>
+    <head <?php language_attributes(); ?> class="no-js no-svg">
 
         <meta charset="<?php bloginfo( 'charset' );?>">
         
@@ -10,6 +10,9 @@
 
         <meta http-equiv="X-UA-Compatible" 
               content="ie=edge">
+
+        <link rel="profile" 
+              href="http://gmpg.org/xfn/11">
         
         <?php 
             wp_head();

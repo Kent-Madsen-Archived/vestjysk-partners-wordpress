@@ -5,6 +5,16 @@ function theme_setup_after()
 {
       /* Adds support for wordpress to handle setting the title  */
       add_theme_support( 'title-tag' );
+      
+      
+      add_theme_support( 'automatic-feed-links' );
+      
+      
+	  add_theme_support( 'editor-styles' );
+
+      add_theme_support( 'wp-block-styles' );
+      
+	  add_theme_support( 'customize-selective-refresh-widgets' );
 
       // Registration
       register_menus();  
@@ -17,30 +27,60 @@ function register_menus()
                                'social-menu' => __( 'Social media menu', 'theme-menu' ), ) );
 
     
-    register_sidebar( array(
-                                'name'=> 'Footer widgets',
-                                'before_widget' => '',
-                                'after_widget' => '',
-                                'before_title' => '<h3>',
-                                'after_title' => '</h3>',
-                            ) );
 };
 
 add_action('after_setup_theme', 'theme_setup_after');
 
+function register_widget_init()
+{
+    
+    register_sidebar( array(
+        'name'=> 'Footer widgets',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ) );
+
+};
+
+add_action('widgets_init', 'register_widget_init');
+
 
 function theme_scripts()
 {
+
+    theme_style();
+};
+
+function theme_style()
+{
+    
     wp_enqueue_style( 'style', 
                        get_stylesheet_uri(), 
                        null, 
                        null, 
                        null );
-
+                       
+    wp_enqueue_style( 'google fonts', 
+                       'https://fonts.google.com/?selection.family=Open+Sans|Roboto', 
+                       null, 
+                       null, 
+                       null );
     
 };
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+
+if(function_exists(''))
+{
+    
+}
+
+
+
+
+
 /*
 class wordpress_menu_walker extends Walker_Nav_Menu
 {
@@ -51,7 +91,7 @@ class wordpress_menu_walker extends Walker_Nav_Menu
         $output = NULL;
 
         $output .= apply_filters(( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args ));
-    }
-}*/
+    };
+};*/
 
 ?>
