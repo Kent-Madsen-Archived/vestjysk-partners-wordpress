@@ -1,0 +1,27 @@
+body 
+{
+    display: grid;
+    
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    
+    grid-gap: 32px;
+
+    margin: 0px;
+    padding:0px;
+}
+
+head
+{
+    height: 200px;
+}
+
+main
+{
+    height: 200px;
+}
+
+footer 
+{
+    height: 200px;
+}
