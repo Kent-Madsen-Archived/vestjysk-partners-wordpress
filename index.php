@@ -4,7 +4,9 @@
 
 <!-- Index Page -->
         <main> 
+            <?php 
             
+            ?>
         </main>
 
 <?php

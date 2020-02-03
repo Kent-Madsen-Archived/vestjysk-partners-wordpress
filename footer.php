@@ -1,7 +1,17 @@
         <footer>
             <div class="page-footer font-small bg-light pt-4"> 
+                <?php 
+                    if(function_exists('dynamic_sidebar')) :
+                ?>
 
+                <?php 
+                 dynamic_sidebar("footer-widget");
+                
+                ?>
 
+                <?php 
+                    endif;
+                ?>
             </div> 
 
             <div class="misc">
@@ -57,7 +67,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" 
         integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg=" 
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+</script>
 
 
 <!-- React componenter -->
