@@ -15,3 +15,18 @@
     margin-right: 16px;
 
 }
+
+.widget-area-4
+{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 32px;
+}
+
+.widget-area-4 .widgetizedArea
+{
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+}
