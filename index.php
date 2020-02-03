@@ -3,7 +3,7 @@
 ?>
 
 <!-- Index Page -->
-        <main> 
+        
             <?php 
             
             ?>
