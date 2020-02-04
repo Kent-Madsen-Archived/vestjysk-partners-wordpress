@@ -1,17 +1,37 @@
         <footer>
-            <div class="bg-dark page-footer widget-area-4"> 
-                <?php 
-                    if( function_exists( 'dynamic_sidebar' ) ) :
-                ?>
+            <div class="bg-dark"> 
+                <div class=" page-footer widget-area-4"> 
+                    <?php 
+                        if( function_exists( 'dynamic_sidebar' ) ) :
+                    ?>
 
-                <?php 
-                    dynamic_sidebar( "footer-widget" );
-                ?>
+                    <?php 
+                        dynamic_sidebar( "footer-widget" );
+                    ?>
 
-                <?php 
-                    endif;
-                ?>
-            </div> 
+                    <?php 
+                        endif;
+                    ?>
+                </div>
+                
+                <div> 
+                    <nav class="navbar justify-content-center ">           
+                        <?php 
+                        if ( has_nav_menu( 'social-menu' ) )
+                        {
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'social-menu',
+                                    'menu_class' => 'nav',
+                                    'item_spacing' => 'preserve',
+                                    'walker' => new social_menu_walker()
+                                )
+                            );  
+                        };
+                    ?>
+                    </nav>
+                </div>
+            </div>
 
             <div>
                 <nav class="navbar navbar-expand-lg navbar-light">           

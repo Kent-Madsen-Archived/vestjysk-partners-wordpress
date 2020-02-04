@@ -7,15 +7,9 @@ function theme_setup_after()
 {
       /* Adds support for wordpress to handle setting the title  */
       add_theme_support( 'title-tag' );
-      
-      
       add_theme_support( 'automatic-feed-links' );
-      
-      
 	  add_theme_support( 'editor-styles' );
-
       add_theme_support( 'wp-block-styles' );
-      
 	  add_theme_support( 'customize-selective-refresh-widgets' );
 
       // Registration
@@ -80,10 +74,6 @@ function theme_style()
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
-if(function_exists(''))
-{
-    
-}
 
 
 
