@@ -1,7 +1,7 @@
         <footer>
-            <div class="page-footer widget-area-4 bg-light"> 
+            <div class="bg-dark page-footer widget-area-4"> 
                 <?php 
-                    if(function_exists('dynamic_sidebar')) :
+                    if( function_exists( 'dynamic_sidebar' ) ) :
                 ?>
 
                 <?php 
@@ -14,7 +14,7 @@
             </div> 
 
             <div>
-                <nav class="misc">           
+                <nav class="text-center py-3">           
                     <?php 
                     if (has_nav_menu('misc-menu'))
                     {
@@ -60,11 +60,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
         crossorigin="anonymous">
 </script>
-
-<link rel="stylesheet" 
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-      crossorigin="anonymous">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" 
         integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg=" 
