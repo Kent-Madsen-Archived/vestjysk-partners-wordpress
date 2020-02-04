@@ -3,6 +3,34 @@
 <html>
     <head <?php language_attributes(); ?> class="no-js no-svg">
 
+    <!-- fjern i produktion -->    
+<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin>
+</script>
+        
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin>
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+        crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+        crossorigin="anonymous">
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+        crossorigin="anonymous">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" 
+        integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg=" 
+        crossorigin="anonymous">
+</script>
+
+
         <meta charset="<?php bloginfo( 'charset' );?>">
         
         <meta name="viewport" 
@@ -11,6 +39,11 @@
         <meta http-equiv="X-UA-Compatible" 
               content="ie=edge">
 
+        <meta name="author" content="VestjyskPartners">
+        
+        <link rel="pingback" 
+              href="<?php bloginfo('pingback_url'); ?>" />
+        
         <link rel="profile" 
               href="http://gmpg.org/xfn/11">
         
@@ -21,15 +54,16 @@
 
     <body>
         <header> 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" > 
                 <?php 
                     if ( has_nav_menu('header-menu') )
                     {
                         wp_nav_menu(
                             array(
                                 'theme_location' => 'header-menu',
-                                'menu-class' => '',
-                                'item_spacing' => 'preserve'
+                                'menu_class' => 'navbar-nav',
+                                'item_spacing' => 'preserve',
+                                'walker' => new bootstrap_menu_walker()
                             )
                         );  
                     }

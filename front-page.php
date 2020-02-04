@@ -3,23 +3,34 @@
 ?>
 
 <!-- Front Page -->
+    <?php 
+        if( is_page() || is_single() ):
+    ?>
+                
+                    <!-- Template -->
+                    <?php 
+                        while( have_posts() ):
+                    ?>
 
-            <?php 
-                if( is_home() ):    
-            ?>
-            
-                <?php 
-                    if( is_page() || is_single() ):
-                ?>
+                        <?php 
+                            the_post();
+                        ?>
+
+                        <?php
+                            the_content();
+                        ?>
+
+                    <?php 
+                        endwhile;
+                    ?>
+
+                    <!-- Template -->
 
 
                 <?php 
                     endif;
                 ?>
 
-            <?php 
-                endif;
-            ?>
             
         </main>
 

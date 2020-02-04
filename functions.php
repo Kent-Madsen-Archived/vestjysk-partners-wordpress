@@ -1,6 +1,8 @@
 <!-- PHP : Functions file -->
 <?php
 
+require_once 'navigation-crawler.php';
+
 function theme_setup_after()
 {
       /* Adds support for wordpress to handle setting the title  */
@@ -51,6 +53,12 @@ add_action('widgets_init', 'register_widget_init');
 
 function theme_scripts()
 {
+    
+    wp_enqueue_script( 'interface', 
+                       get_template_directory_uri() . './content/javascript/interface.js', 
+                       null, 
+                       null, 
+                       false );
 
     theme_style();
 };
@@ -81,17 +89,6 @@ if(function_exists(''))
 
 
 
-/*
-class wordpress_menu_walker extends Walker_Nav_Menu
-{
-    function start_el(&$output, $item, $depth, $args)
-    {
-        global $wp_query;
 
-        $output = NULL;
-
-        $output .= apply_filters(( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args ));
-    };
-};*/
 
 ?>
