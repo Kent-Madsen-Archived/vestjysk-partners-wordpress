@@ -25,7 +25,6 @@ $theme_version = $theme['Version'];
 $theme_version = $theme['Name'];
 $theme_version = $theme['Description'];
 
-
 function theme_setup_after()
 {
       /* Adds support for wordpress to handle setting the title  */
@@ -46,42 +45,20 @@ function theme_setup_after()
       register_menus();
 };
 
-add_action('after_setup_theme', 'theme_setup_after');
+// Add Triggers
+    // Actions
+    add_action('after_setup_theme', 'theme_setup_after');
 
-add_action('widgets_init', 'register_widget_init');
+    add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+    add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
-add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+    add_action('widgets_init', 'register_widget_init');
 
-function my_wp_nav_menu_items( $items, $args ) 
-{
+    // Filters
+    add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+    add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
-    return $items;
-}
+    add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
 
-add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
-
-function my_wp_nav_menu_objects( $items, $args ) 
-{
-    foreach( $items as &$item )
-    {
-        $icon = get_field('icon-name', $item);
-    
-        if ($icon)
-        {
-            $item->title = '<i class="' . $icon . '"></i>';
-        }
-
-    }
-
-    return $items;
-}
-
-  add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
-
-  add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-
-  add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-
-  add_action( 'customize_register', 'theme_customize_register' );
-  
+    add_action( 'customize_register', 'theme_customize_register' );
 ?>
