@@ -74,7 +74,7 @@
         ?>
     </head>
 
-    <body>
+    <body onload="loadUI()">
         <header> 
             <nav class="navbar navbar-expand navbar-light bg-light" > 
                 <?php 
@@ -100,17 +100,3 @@
             <?php 
                 get_sidebar();
             ?>
-        
-<!---
-        <nav aria-label="breadcrumb"> 
-            <ol class="breadcrumb bg-light">
-                <li class="breadcrumb-item">
-                    <a href="#"> 
-                        Home
-                    </a>
-                </li>
-                
-    <li class="breadcrumb-item active" aria-current="page">Library</li>
-            </ol>
-        </nav>
--->
