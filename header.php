@@ -31,6 +31,10 @@
 </script>
 
 
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/2ea1bb2ea9.js" crossorigin="anonymous"></script>
+
+
         <meta charset="<?php bloginfo( 'charset' );?>">
         
         <meta name="viewport" 
@@ -46,6 +50,24 @@
         
         <link rel="profile" 
               href="http://gmpg.org/xfn/11">
+
+        <?php
+            function theme_get_customizer_css() {
+                ob_start();
+
+                $text_color = get_theme_mod( 'text_color', '' );
+                if ( ! empty( $text_color ) ) {
+                ?>
+                body {
+                    color: <?php echo $text_color; ?>;
+                }
+                <?php
+                }
+
+                $css = ob_get_clean();
+                return $css;
+            } 
+        ?>
         
         <?php 
             wp_head();
@@ -54,14 +76,14 @@
 
     <body>
         <header> 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" > 
+            <nav class="navbar navbar-expand navbar-light bg-light" > 
                 <?php 
                     if ( has_nav_menu('header-menu') )
                     {
                         wp_nav_menu(
                             array(
                                 'theme_location' => 'header-menu',
-                                'menu_class' => 'navbar-nav',
+                                'menu_class' => 'navbar-nav justify-content-center',
                                 'item_spacing' => 'preserve',
                                 'walker' => new bootstrap_menu_walker()
                             )
@@ -72,7 +94,11 @@
             
         </header>
 
-        <main> 
+        <main>
+            <?php 
+                get_sidebar();
+            ?>
+        
 <!---
         <nav aria-label="breadcrumb"> 
             <ol class="breadcrumb bg-light">

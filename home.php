@@ -2,14 +2,13 @@
     get_header();
 ?>
 
-<!-- Page -->
-        
+<!-- Index Page -->
             <?php 
                 if( is_page() || is_single() ):
             ?>
-
-                <!-- Template -->
-                <?php 
+            
+            <!-- Template -->
+            <?php 
                     while( have_posts() ):
                 ?>
 
@@ -25,13 +24,9 @@
                     endwhile;
                 ?>
 
-                <!-- Template -->
-
-
             <?php 
                 endif;
             ?>
-
         </main>
 
 <?php

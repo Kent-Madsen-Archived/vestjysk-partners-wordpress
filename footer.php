@@ -34,14 +34,14 @@
             </div>
 
             <div>
-                <nav class="navbar navbar-expand-lg navbar-light">           
+                <nav class="">           
                     <?php 
                     if ( has_nav_menu( 'misc-menu' ) )
                     {
                         wp_nav_menu(
                             array(
                                 'theme_location' => 'misc-menu',
-                                'menu_class' => 'navbar-nav',
+                                'menu_class' => 'nav justify-content-center',
                                 'item_spacing' => 'preserve',
                                 'walker' => new bootstrap_menu_walker()
                             )
@@ -62,6 +62,20 @@
 
 
 
-<!-- React componenter -->
+        
+        <!-- Development Purposes Only -->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+</script>
+
+        <!-- Frameworks -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin>
+</script>
+                
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>
+</script>
+
+<!-- React Components -->
+<!-- <script src="<?php echo (get_template_directory_uri() . "/content/babel/moveBack.jsx"); ?>" type="text/babel"> 
+</script> -->
 
 <!-- Analytics tool -->

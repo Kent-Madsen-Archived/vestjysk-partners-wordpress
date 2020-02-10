@@ -7,6 +7,18 @@
     Version: ?
 */
 
+$primary-color: #000000 !default;
+$secondary-color: #000000 !default;
+
+$header-background-color: #000000 !default;
+$footer-background-color: #344656 !default;
+
+$some-standard: #000000 !default;
+
+$title_font: 'Open Sans', sans-serif !default;
+$body_font: 'Roboto', sans-serif !default;
+
+
 @import './info.scss';
 @import './templates.scss';
 

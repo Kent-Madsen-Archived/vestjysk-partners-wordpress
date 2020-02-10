@@ -13,7 +13,8 @@ function theme_setup_after()
 	  add_theme_support( 'customize-selective-refresh-widgets' );
 
       // Registration
-      register_menus();  
+      register_menus();
+
 };
 
 function register_menus()
@@ -45,6 +46,7 @@ function register_widget_init()
 add_action('widgets_init', 'register_widget_init');
 
 
+
 function theme_scripts()
 {
     
@@ -74,11 +76,90 @@ function theme_style()
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
+function my_wp_nav_menu_items( $items, $args ) 
+{
+    
+    
+
+    return $items;
+}
+
+add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+
+function my_wp_nav_menu_objects( $items, $args ) 
+{
+    foreach( $items as &$item )
+    {
+        $icon = get_field('icon-name', $item);
+    
+        if ($icon)
+        {
+            $item->title = '<i class="' . $icon . '"></i>';
+        }
+
+    }
+
+    return $items;
+}
+
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+function theme_customize_register( $wp_customize ) {
+    // All our settings will go here
+    $wp_customize->add_setting( 'primary-color', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary-color', array(
+        'section' => 'colors',
+        'label'   => esc_html__( 'Primary Theme color', 'theme' ),
+    ) ) );
+
+    //
+    $wp_customize->add_setting( 'secondary-color', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary-color', array(
+        'section' => 'colors',
+        'label'   => esc_html__( 'secondary Theme color', 'theme' ),
+    ) ) );
+
+    //
+    $wp_customize->add_setting( 'header-background-color', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header-background-color', array(
+        'section' => 'colors',
+        'label'   => esc_html__( 'Header Theme color', 'theme' ),
+    ) ) );
 
 
+    //
+    $wp_customize->add_setting( 'footer-background-color', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer-background-color', array(
+        'section' => 'colors',
+        'label'   => esc_html__( 'Footer Theme color', 'theme' ),
+    ) ) );
+}
+
+add_action( 'customize_register', 'theme_customize_register' );
 
 
-
-
+function theme_enqueue_styles() {
+    wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+    $custom_css = theme_get_customizer_css();
+    wp_add_inline_style( 'theme-styles', $custom_css );
+  }
+  
+  add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 ?>
