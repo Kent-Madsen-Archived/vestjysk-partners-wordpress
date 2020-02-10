@@ -1,12 +1,10 @@
+<!-- Bootstrap Navigation Social Walker -->
 <?php 
 
-class bootstrap_footer_menu_walker extends Walker_Nav_Menu
+class social_menu_walker extends Walker_Nav_Menu
 {
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
-    {
-        // Preparing variables
-        // https://www.ibenic.com/how-to-create-wordpress-custom-menu-walker-nav-menu-class/
-        
+    {   
         $object = $item->object;
         $type = $item->type;
         $title = $item->title;
@@ -18,7 +16,7 @@ class bootstrap_footer_menu_walker extends Walker_Nav_Menu
         //Add SPAN if no Permalink
         if( $permalink && $permalink != '#' ) 
         {
-            $output .= "<a class='nav-link' href='" . $permalink . "'>";
+                $output .= "<a class='nav-link' href='" . $permalink . "'>";
         } 
         else 
         {
@@ -41,22 +39,20 @@ class bootstrap_footer_menu_walker extends Walker_Nav_Menu
             $output .= '</span>';
         }
         
+        
     }
     
     function start_lvl( &$output, $depth = 0, $arg = Array() )
     {
         $output .= "\n<ul class='sub-menu'>\n";
 
-        $output .= '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
     }
 
-    function end_lvl(&$output, $depth=0, $args=array()) {
-        
-        $output .= "</div>\n";
+    function end_lvl(&$output, $depth=0, $args=array()) 
+    {    
         $output .= "</ul>\n";
     }
 
 };
-
 
 ?>

@@ -1,5 +1,7 @@
+<!-- Bootstrap Navigation Footer Walker -->
 <?php 
-class bootstrap_menu_walker extends Walker_Nav_Menu
+
+class bootstrap_footer_menu_walker extends Walker_Nav_Menu
 {
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
@@ -17,16 +19,7 @@ class bootstrap_menu_walker extends Walker_Nav_Menu
         //Add SPAN if no Permalink
         if( $permalink && $permalink != '#' ) 
         {
-            
-
-            if(in_array("menu-item-has-children", $item->classes, true))
-            {
-                $output .= "<a class='nav-link' href='" . $permalink . "' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
-            }
-            else 
-            {
-                $output .= "<a class='nav-link' href='" . $permalink . "'>";
-            }
+            $output .= "<a class='nav-link' href='" . $permalink . "'>";
         } 
         else 
         {
@@ -65,4 +58,6 @@ class bootstrap_menu_walker extends Walker_Nav_Menu
     }
 
 };
+
+
 ?>
