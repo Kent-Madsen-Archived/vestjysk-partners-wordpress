@@ -3,6 +3,7 @@
             <div id="footer-widget" class="page-footer widget-area"> 
                 <?php 
                     if( function_exists( 'dynamic_sidebar' ) ) :
+
                 ?>
                     <?php 
                         dynamic_sidebar( "footer-widget" );
@@ -29,7 +30,7 @@
                     </nav>
                 </div>
             </div>
-            <div>
+            <div class="bg-dark">
                 <nav class="">           
                     <?php 
                     if ( has_nav_menu( 'misc-menu' ) )

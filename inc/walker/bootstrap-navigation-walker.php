@@ -1,13 +1,15 @@
 <!-- Bootstrap Navigation Walker -->
 <?php 
 
-function my_wp_nav_menu_items( $items, $args ) 
+
+function my_wp_nav_menu_objects( $items, $args ) 
 {
+    apply_logo($items, $args);
 
     return $items;
 }
 
-function my_wp_nav_menu_objects( $items, $args ) 
+function apply_logo($items, $args)
 {
     foreach( $items as &$item )
     {

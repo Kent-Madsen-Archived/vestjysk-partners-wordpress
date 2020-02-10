@@ -16,6 +16,7 @@ class social_menu_walker extends Walker_Nav_Menu
         //Add SPAN if no Permalink
         if( $permalink && $permalink != '#' ) 
         {
+            
                 $output .= "<a class='nav-link' href='" . $permalink . "'>";
         } 
         else 

@@ -1,22 +1,7 @@
 <!-- PHP : Functions file -->
 <?php
-require get_parent_theme_file_path('/inc/admin/customize.php');
+include 'include.php';
 
-//
-require get_parent_theme_file_path('/inc/widget/footer-widget.php');
-require get_parent_theme_file_path('/inc/debug/debug.php');
-
-
-//
-require get_parent_theme_file_path('/inc/setup/include_styles.php');
-require get_parent_theme_file_path('/inc/setup/include_scripts.php');
-
-require get_parent_theme_file_path('/inc/setup/register.php');
-
-// Used templates
-require get_parent_theme_file_path('/inc/walker/boostrap-navigation-social-walker.php');
-require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-footer-walker.php');
-require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-walker.php');
 
 // Set Theme variables
 $theme = wp_get_theme();
@@ -44,6 +29,16 @@ function theme_setup_after()
       // Registration
       register_menus();
 };
+
+function my_wp_nav_menu_items( $items, $args ) 
+{
+    $menu = wp_get_nav_menu_object($args->menu);
+
+    
+
+    return $items;
+};
+
 
 // Add Triggers
     // Actions

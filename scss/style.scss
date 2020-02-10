@@ -7,8 +7,8 @@
     Version: ?
 */
 
-$primary-color: #000000 !default;
-$secondary-color: #000000 !default;
+$primary-color: #6ad1ff !default;
+$secondary-color: #344656 !default;
 
 $header-background-color: #000000 !default;
 $footer-background-color: #344656 !default;
@@ -17,6 +17,14 @@ $some-standard: #000000 !default;
 
 $title_font: 'Open Sans', sans-serif !default;
 $body_font: 'Roboto', sans-serif !default;
+
+// Bootstrap variables
+$primary: $primary-color;
+$secondary: $secondary-color;
+
+$font-family-sans-serif: $title_font;
+$font-family-monospace: $body_font;
+$font-family-base: $font-family-sans-serif;
 
 
 @import './info.scss';

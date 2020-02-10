@@ -3,7 +3,7 @@
 ?>
 
 <!-- Index Page -->
-            <?php 
+            <?php
                 if( is_page() || is_single() ):
             ?>
             

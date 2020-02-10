@@ -4,9 +4,10 @@
 
 <!-- Index Page -->
             <?php 
+            
                 if( is_page() || is_single() ):
             ?>
-            
+
             <!-- Template -->
             <?php 
                     while( have_posts() ):

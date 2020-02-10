@@ -6,6 +6,10 @@
     <?php 
         if( is_page() || is_single() ):
     ?>
+    
+    <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            
                 
                     <!-- Template -->
                     <?php 
