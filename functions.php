@@ -2,7 +2,9 @@
 <?php
 
 // Used templates
-require get_parent_theme_file_path('/inc/navigation-crawler.php');
+require get_parent_theme_file_path('/inc/boostrap-navigation-social-walker.php');
+require get_parent_theme_file_path('/inc/bootstrap-navigation-footer-walker.php');
+require get_parent_theme_file_path('/inc/bootstrap-navigation-walker.php');
 
 // Set Theme variables
 $theme = wp_get_theme();
