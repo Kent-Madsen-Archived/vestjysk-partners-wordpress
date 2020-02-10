@@ -1,13 +1,28 @@
 <!-- PHP : Functions file -->
 <?php
 
-require_once 'navigation-crawler.php';
+// Used templates
+require get_parent_theme_file_path('/inc/navigation-crawler.php');
+
+// Set Theme variables
+$theme = wp_get_theme();
+$theme_version = $theme['Version'];
+$theme_version = $theme['Name'];
+$theme_version = $theme['Description'];
+
 
 function theme_setup_after()
 {
       /* Adds support for wordpress to handle setting the title  */
       add_theme_support( 'title-tag' );
+      
+      // Adds Support for wordpress to handle feed links
       add_theme_support( 'automatic-feed-links' );
+
+
+      // Adds Support for wordpress to handle thumbnails
+      add_theme_support( 'post-thumbnails' );
+
 	  add_theme_support( 'editor-styles' );
       add_theme_support( 'wp-block-styles' );
 	  add_theme_support( 'customize-selective-refresh-widgets' );
@@ -221,5 +236,4 @@ function theme_enqueue_styles() {
   }
   
   add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-
 ?>
