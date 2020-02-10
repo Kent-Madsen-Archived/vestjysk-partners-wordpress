@@ -95,6 +95,8 @@
         </header>
 
         <main>
+            <?php ?>
+            
             <?php 
                 get_sidebar();
             ?>

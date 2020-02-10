@@ -1,6 +1,6 @@
         <footer>
             <div class="bg-dark"> 
-                <div class=" page-footer widget-area-4"> 
+                <div class=" page-footer widget-area"> 
                     <?php 
                         if( function_exists( 'dynamic_sidebar' ) ) :
                     ?>

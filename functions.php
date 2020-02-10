@@ -14,7 +14,13 @@ function theme_setup_after()
 
       // Registration
       register_menus();
+};
 
+function is_debugging()
+{
+    $debug_state = false;
+
+    return $debug_state;
 };
 
 function register_menus()
@@ -153,6 +159,60 @@ function theme_customize_register( $wp_customize ) {
 
 add_action( 'customize_register', 'theme_customize_register' );
 
+function debugPrint($name, $value)
+{
+    if (!is_debugging())
+    {
+        return;
+    }
+
+    print("<!--");
+        print($name);
+        print(": ");
+        print($value);
+    print("-->");
+}
+
+// footer-widget
+function my_dynamic_sidebar_params( $params ) 
+{
+    $default = '<div class="widgetizedArea';
+
+     for( $idx = 0; 
+          $idx < sizeof( $params ); 
+          $idx ++ )
+     {
+         if($idx == 0)
+         {
+             
+            if(is_debugging())
+            {
+                print("<!--");
+                print_r($params[$idx]);
+                print("-->");
+            }
+
+            $widget_area_name = $params[$idx]['id']; 
+
+            $widget_name = $params[$idx]['widget_name'];
+            $widget_area_identity = $params[$idx]['widget_id'];
+   
+            if(true)
+            {             
+               $widget_chosen_size = get_field('widgetSize', 'widget_' . $widget_area_identity);
+               $params[$idx]['before_widget'] = $default . ' ' . $widget_chosen_size . '">';
+            }
+   
+         }
+
+     }
+
+    
+	// return
+	return $params;
+}
+
+add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
 
 function theme_enqueue_styles() {
     wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
