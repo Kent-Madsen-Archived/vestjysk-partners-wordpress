@@ -1,19 +1,16 @@
-        <footer>
-            <div class="bg-dark"> 
-                <div class=" page-footer widget-area"> 
-                    <?php 
-                        if( function_exists( 'dynamic_sidebar' ) ) :
-                    ?>
-
+    <footer>
+        <div class="bg-dark"> 
+            <div id="footer-widget" class="page-footer widget-area"> 
+                <?php 
+                    if( function_exists( 'dynamic_sidebar' ) ) :
+                ?>
                     <?php 
                         dynamic_sidebar( "footer-widget" );
                     ?>
-
-                    <?php 
-                        endif;
-                    ?>
-                </div>
-                
+                <?php 
+                    endif;
+                ?>
+            </div>
                 <div> 
                     <nav class="navbar justify-content-center ">           
                         <?php 
@@ -32,7 +29,6 @@
                     </nav>
                 </div>
             </div>
-
             <div>
                 <nav class="">           
                     <?php 
@@ -49,20 +45,13 @@
                     };
                 ?>
                 </nav> 
-            </div>
-        </footer>
-
-    </body>
-
-    <?php 
-        wp_footer();
-    ?>
-
+        </div>
+    </footer>
+</body>
+<?php 
+    wp_footer();
+?>
 </html>
-
-
-
-        
         <!-- Development Purposes Only -->
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
 </script>
@@ -72,6 +61,11 @@
 </script>
                 
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>
+</script>
+
+        <!-- -->
+<script src="<?php echo (get_template_directory_uri() . "/content/javascript/ui.js"); ?>">
+    execute();
 </script>
 
 <!-- React Components -->
