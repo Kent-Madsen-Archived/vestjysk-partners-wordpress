@@ -1,4 +1,3 @@
-<!-- Bootstrap Navigation Walker -->
 <?php 
 
 class bootstrap_base_menu_walker extends bootstrap_generic_menu_walker

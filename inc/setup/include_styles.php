@@ -1,4 +1,3 @@
-<!-- PHP : Include Styles file -->
 <?php
 
     function theme_enqueue_styles() 

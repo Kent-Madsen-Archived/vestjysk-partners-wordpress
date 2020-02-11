@@ -1,4 +1,3 @@
-<!-- PHP : Include Scripts file -->
 <?php
 
     function theme_scripts()

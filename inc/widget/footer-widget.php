@@ -1,5 +1,4 @@
 <?php 
-// footer-widget
 function my_dynamic_sidebar_params( $params ) 
 {
     $default = '<div class="widgetizedArea';

@@ -1,4 +1,3 @@
-<!-- PHP : Register file -->
 <?php 
 
 function register_menus()

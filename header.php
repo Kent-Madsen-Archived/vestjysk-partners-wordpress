@@ -2,7 +2,6 @@
 
 <html>
     <head <?php language_attributes(); ?> class="no-js no-svg">
-
         <meta charset="<?php bloginfo( 'charset' );?>">
         
         <meta name="viewport" 
@@ -11,7 +10,8 @@
         <meta http-equiv="X-UA-Compatible" 
               content="ie=edge">
 
-        <meta name="author" content="VestjyskPartners">
+        <meta name="author" 
+              content="VestjyskPartners">
         
         <link rel="pingback" 
               href="<?php bloginfo('pingback_url'); ?>" />
@@ -26,6 +26,7 @@
 
     <body onload="loadUI()">
         <header> 
+
             <nav class="navbar navbar-expand navbar-light bg-primary" > 
                 <?php 
                     if ( has_nav_menu('header-menu') )

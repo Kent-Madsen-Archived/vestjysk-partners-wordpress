@@ -1,4 +1,3 @@
-<!-- PHP : Functions file -->
 <?php
 include 'include.php';
 
@@ -48,18 +47,22 @@ function theme_setup_after()
 
 // Add Triggers
     // Actions
+      // Boostrap theme
     add_action('after_setup_theme', 'theme_setup_after');
 
+    // Setup Necesarry Scripts and code
     add_action( 'wp_enqueue_scripts', 'theme_scripts' );
     add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+    // Setup Widget Areas
     add_action('widgets_init', 'register_widget_init');
 
     // Filters
+      // Custom menu filter setup
     add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
     add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
+      // Custom widget filter setup
     add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
 
-    add_action( 'customize_register', 'theme_customize_register' );
 ?>
