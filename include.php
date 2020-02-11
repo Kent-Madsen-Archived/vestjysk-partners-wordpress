@@ -3,7 +3,6 @@
 
     //
     require get_parent_theme_file_path('/inc/widget/footer-widget.php');
-    require get_parent_theme_file_path('/inc/debug/debug.php');
 
 
     //

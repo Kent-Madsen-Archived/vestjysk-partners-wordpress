@@ -10,12 +10,6 @@ function my_dynamic_sidebar_params( $params )
          if($idx == 0)
          {
              
-            if(is_debugging())
-            {
-                print("<!--");
-                print_r($params[$idx]);
-                print("-->");
-            }
 
             $widget_area_name = $params[$idx]['id']; 
 
