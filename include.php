@@ -12,6 +12,7 @@ require get_parent_theme_file_path('/inc/setup/include_scripts.php');
 
 require get_parent_theme_file_path('/inc/setup/register.php');
 
+require get_parent_theme_file_path('/inc/filter/menu-filters.php');
 
 // Used templates
     // template
@@ -21,6 +22,6 @@ require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-walker-gene
 require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-walker.php');
 
     // Implementations
-require get_parent_theme_file_path('/inc/walker/boostrap-navigation-social-walker.php');
+require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-social-walker.php');
 require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-footer-walker.php');
 ?>

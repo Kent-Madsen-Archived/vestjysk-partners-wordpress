@@ -10,6 +10,13 @@ $theme_version = $theme['Version'];
 $theme_version = $theme['Name'];
 $theme_version = $theme['Description'];
 
+/* 
+
+	  add_theme_support( 'customize-selective-refresh-widgets' );
+	  add_theme_support( 'editor-styles' );
+      add_theme_support( 'wp-block-styles' );
+*/
+
 function theme_setup_after()
 {
       /* Adds support for wordpress to handle setting the title  */
@@ -22,10 +29,7 @@ function theme_setup_after()
       // Adds Support for wordpress to handle thumbnails
       add_theme_support( 'post-thumbnails' );
 
-	  add_theme_support( 'editor-styles' );
-      add_theme_support( 'wp-block-styles' );
-	  add_theme_support( 'customize-selective-refresh-widgets' );
-
+      //
       add_theme_support( 'custom-logo' );
 
       add_theme_support( 'custom-logo', array(
@@ -38,20 +42,9 @@ function theme_setup_after()
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
 
-
       // Registration
       register_menus();
 };
-
-function my_wp_nav_menu_items( $items, $args ) 
-{
-    $menu = wp_get_nav_menu_object($args->menu);
-
-    
-
-    return $items;
-};
-
 
 // Add Triggers
     // Actions
