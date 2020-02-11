@@ -6,7 +6,62 @@ function loadUI()
 
 function apply()
 {
+    applyHeaderHeaderArea();
     applyFooterWidgetArea();
+}
+
+function applyHeaderHeaderArea()
+{
+    console.log(document.getElementsByClassName('navbar-toggler'));
+
+    var element = document.getElementsByClassName('submenu');
+
+    var idx = 0; 
+
+    for (idx = 0; idx < element.length; idx++)
+    {
+        var currentSelectedElement = element[idx];
+        
+        
+        console.log("before");
+        console.log(currentSelectedElement);
+
+        var id = travelFindMenuIdentity( currentSelectedElement );
+        console.log("found id");
+        console.log(id);
+
+        currentSelectedElement.setAttribute('aria-labelledby', id);
+
+    }
+
+}
+
+function travelFindMenuIdentity(node)
+{
+    var currentParent = node.parentNode;
+
+    console.log("Parent");
+    console.log(currentParent);
+
+    var idx = 0;
+
+    for ( idx = 0; 
+        idx < currentParent.childNodes.length; 
+        idx++)
+    {
+        var currentSelectedChild = currentParent.childNodes[idx];
+        console.log(currentSelectedChild);
+        
+        console.log("Child");
+        console.log(currentSelectedChild);
+
+        if(currentSelectedChild.tagName == 'A')
+        {
+            console.log("is link");
+            return currentSelectedChild.id;
+        }
+    }
+
 }
 
 function applyFooterWidgetArea()
@@ -43,5 +98,4 @@ function cleanFooterWidgetArea()
         }
         
     }
-
 }

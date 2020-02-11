@@ -3,11 +3,12 @@
 class bootstrap_header_menu_walker 
     extends bootstrap_base_menu_walker
 {
+    private $menuIdentifier = 0;
+
     // Level
     function start_lvl( &$output, $depth = 0, $arg = Array() )
     {
-        $this->appendOutput('<div class="SubMenu dropdown-menu mega-menu"
-        aria-labelledby="navbarDropdownMenuLink2">');
+        $this->appendOutput('<div class="submenu dropdown-menu mega-menu">');
 
         $this->appendOutput('<ul class="navigation-menu">');
 
@@ -44,10 +45,10 @@ class bootstrap_header_menu_walker
         {
             if( in_array( "menu-item-has-children", $item->classes, true ) )
             {
-                $this->appendOutput( '<li class="' . 'header-navigation-menu-button' . ' dropdown mega-dropdown"  '. '>' );
-        
-                $this->appendOutput('<a class="header-navigation-menu-link dropdown-toggle" href="' . $permalink . ' role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" >');
+                $this->appendOutput( '<li class="' . 'header-navigation-menu-button' . ' dropdown mega-dropdown ' . implode(' ', $item->classes) . ' "  '. '>' );
+                
+                $this->menuIdentifier= $this->menuIdentifier + 1;
+                $this->appendOutput('<a id="header-navigation-sub-menu-'  . strval($this->menuIdentifier) . '"' . 'class="header-navigation-menu-link dropdown-toggle" href="' . $permalink . ' role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >');
             }
             else 
             {

@@ -34,23 +34,28 @@
             ?>
                 <nav id="navigation-header-menu" class="secondary-header"> 
                       <!-- Navbar brand -->
-                    <a class="navbar-brand text-uppercase" href="#">
+                    <a class="navbar-brand" href="#">
                         <?php 
                         echo get_bloginfo('title');
                         ?>
                     </a>
 
                     <!-- Collapse button -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
-                    aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler" 
+                            type="button" 
+                            data-toggle="collapse" 
+                            data-target="#navigation-menu-header-container" 
+                            aria-controls="navigation-menu-header-container" 
+                            aria-expanded="false" 
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <?php 
                             wp_nav_menu(
                                 array(
                                         'container' => 'div',
-                                        'container_id' => '',
+                                        'container_id' => 'navigation-menu-header-container',
                                         'container_class' => '',
                                         'theme_location' => 'header-menu',
                                         'menu_class' => 'navigation-menu',
@@ -62,8 +67,8 @@
 
                     <!-- Search form -->
                     <form class="form-inline">
-                        <div class="md-form my-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <div class="md-form">
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
                         </div>
                     </form>
                 </nav>
