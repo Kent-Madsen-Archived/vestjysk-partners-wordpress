@@ -32,18 +32,41 @@
             <?php 
                 if ( has_nav_menu('header-menu') ):
             ?>
+                <nav id="navigation-header-menu" class="secondary-header"> 
+                      <!-- Navbar brand -->
+                    <a class="navbar-brand text-uppercase" href="#">
+                        <?php 
+                        echo get_bloginfo('title');
+                        ?>
+                    </a>
+
+                    <!-- Collapse button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+                    aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
                     <?php 
                             wp_nav_menu(
                                 array(
-                                        'container' => 'nav',
-                                        'container_id' => 'navigation-header-menu',
+                                        'container' => 'div',
+                                        'container_id' => '',
+                                        'container_class' => '',
                                         'theme_location' => 'header-menu',
                                         'menu_class' => 'navigation-menu',
                                         'item_spacing' => 'preserve',
                                         'walker' => new bootstrap_header_menu_walker()
                                 )
                             );  
-                        ?>
+                    ?>
+
+                    <!-- Search form -->
+                    <form class="form-inline">
+                        <div class="md-form my-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                    </form>
+                </nav>
             <?php
                 endif; 
             ?>

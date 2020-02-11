@@ -3,21 +3,34 @@
 class bootstrap_header_menu_walker 
     extends bootstrap_base_menu_walker
 {
+    // Level
     function start_lvl( &$output, $depth = 0, $arg = Array() )
     {
+        $this->appendOutput('<div class="SubMenu dropdown-menu mega-menu"
+        aria-labelledby="navbarDropdownMenuLink2">');
+
+        $this->appendOutput('<ul class="navigation-menu">');
+
+        //
         $output .= $this->getOutput();
         $this->clearOutput();
     }
 
-    function end_lvl(&$output, $depth=0, $args=array()) 
+    function end_lvl( &$output, $depth=0, $args=array()) 
     {
+        $this->appendOutput('</ul>');
+        
+        $this->appendOutput('</div>');
+        
+
+        //
         $output .= $this->getOutput();
         $this->clearOutput();
     }
 
+    // Element
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
-        
         // Preparing variables
         $object = $item->object;
         $type = $item->type;
@@ -25,18 +38,22 @@ class bootstrap_header_menu_walker
         $description = $item->description;
         $permalink = $item->url;
 
-        $this->appendOutput("<li class='" .  implode(" ", $item->classes) . "'>");
         
         //Add SPAN if no Permalink
         if( $permalink && $permalink != '#' ) 
         {
-            if(in_array("menu-item-has-children", $item->classes, true))
+            if( in_array( "menu-item-has-children", $item->classes, true ) )
             {
-                $this->appendOutput("<a class='nav-link' href='" . $permalink . "' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
+                $this->appendOutput( '<li class="' . 'header-navigation-menu-button' . ' dropdown mega-dropdown"  '. '>' );
+        
+                $this->appendOutput('<a class="header-navigation-menu-link dropdown-toggle" href="' . $permalink . ' role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" >');
             }
             else 
             {
-                $this->appendOutput( "<a class='nav-link' href='" . $permalink . "'>");
+                $this->appendOutput( '<li class="' . 'header-navigation-menu-button' . '" '. '>' );
+        
+                $this->appendOutput( "<a class='header-navigation-menu-link' href='" . $permalink . "'>");
             }
         } 
         else 
@@ -60,10 +77,22 @@ class bootstrap_header_menu_walker
             $this->appendOutput( '</span>');
         }
         
-        
+        //
         $output .= $this->getOutput();
         $this->clearOutput();
     }
+/*
+    function end_el( &$output, $item, $depth = 0, $args = null )
+    {
+        $this->appendOutput('</a>');
+        $this->appendOutput('</li>');
+
+     
+        //
+        $output .= $this->getOutput();
+        $this->clearOutput();
+    }
+    */
 
 };
 ?>

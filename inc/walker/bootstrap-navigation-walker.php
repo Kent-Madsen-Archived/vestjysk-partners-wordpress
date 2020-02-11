@@ -1,9 +1,11 @@
 <?php 
 
-class bootstrap_base_menu_walker extends bootstrap_generic_menu_walker
+class bootstrap_base_menu_walker 
+    extends bootstrap_generic_menu_walker
 {
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
+        /*
         // Preparing variables
         // https://www.ibenic.com/how-to-create-wordpress-custom-menu-walker-nav-menu-class/
         
@@ -49,20 +51,25 @@ class bootstrap_base_menu_walker extends bootstrap_generic_menu_walker
         {
             $output .= '</span>';
         }
+        */
         
     }
     
     function start_lvl( &$output, $depth = 0, $arg = Array() )
     {
+        /*
         $output .= "\n<ul class='sub-menu'>\n";
 
         $output .= '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+        */
     }
 
-    function end_lvl(&$output, $depth=0, $args=array()) {
-        
+    function end_lvl(&$output, $depth=0, $args=array()) 
+    {
+        /* 
         $output .= "</div>\n";
         $output .= "</ul>\n";
+        */
     }
 
 };
