@@ -122,6 +122,10 @@
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (min-width: 992px) 
 {
+    .responsive-elements-only
+    {
+        display:none;
+    }
 
     .widget-area
     {

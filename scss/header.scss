@@ -11,7 +11,11 @@
 
 #navigation-header-menu
 {
+    @extend .navbar;
+    @extend .navbar-expand-lg;
     @extend .navbar-dark;   
+    @extend .mr-auto;
+
 }
 
 .header-navigation-menu-link
@@ -24,12 +28,6 @@
     @extend .nav-item;
 }
 
-#navigation-header-menu
-{
-    @extend .navbar;
-    @extend .navbar-expand-lg;
-    @extend .mr-auto;
-}
 
 .navigation-menu
 {
@@ -37,6 +35,11 @@
     @extend .mr-auto;
 
     margin:0px;
+}
+
+#navigation-menu-header-container
+{
+    @extend .navbar;
 }
 
 .dropdown:hover .dropdown-menu {display: block;}

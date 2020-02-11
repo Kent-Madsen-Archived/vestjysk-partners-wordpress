@@ -48,7 +48,7 @@ class bootstrap_header_menu_walker
                 $this->appendOutput( '<li class="' . 'header-navigation-menu-button' . ' dropdown mega-dropdown ' . implode(' ', $item->classes) . ' "  '. '>' );
                 
                 $this->menuIdentifier= $this->menuIdentifier + 1;
-                $this->appendOutput('<a id="header-navigation-sub-menu-'  . strval($this->menuIdentifier) . '"' . 'class="header-navigation-menu-link dropdown-toggle" href="' . $permalink . '"   aria-haspopup="true" aria-expanded="false" >');
+                $this->appendOutput('<a id="header-navigation-sub-menu-'  . strval($this->menuIdentifier) . '"' . 'class="header-navigation-menu-link dropdown-toggle" href="' . $permalink . '"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >');
             }
             else 
             {

@@ -1,6 +1,6 @@
 <?php 
-
-function theme_customize_register( $wp_customize ) {
+function theme_customize_register( $wp_customize ) 
+{
     // All our settings will go here
     $wp_customize->add_setting( 'primary-color', array(
         'default'   => '',
