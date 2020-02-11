@@ -3,35 +3,9 @@
 class bootstrap_generic_menu_walker 
     extends Walker_Nav_Menu
 {
-    protected $output = null;
-
-    protected function appendOutput($appendText)
-    {
-        $this->output .= $appendText;
-    }
-
-    protected function getOutput()
-    {
-        return $this->output;
-    }
-
-    protected function clearOutput()
-    {
-        $this->output = null;
-    }
-
-    protected function mergeClasses($Array)
-    {
-        return $this->classEncapsulation(implode(" ", $Array));
-    }
-
-    protected function classEncapsulation($str)
-    {
-        return '"' . $str . '"';
-    }
-
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
+        /*
         // Preparing variables
         // https://www.ibenic.com/how-to-create-wordpress-custom-menu-walker-nav-menu-class/
         
@@ -77,20 +51,24 @@ class bootstrap_generic_menu_walker
         {
             $output .= '</span>';
         }
-        
+        */
     }
     
     function start_lvl( &$output, $depth = 0, $arg = Array() )
     {
+        /*
         $output .= "\n<ul class='sub-menu'>\n";
 
         $output .= '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+        */
     }
 
-    function end_lvl(&$output, $depth=0, $args=array()) {
-        
-        $output .= "</div>\n";
-        $output .= "</ul>\n";
+    function end_lvl(&$output, $depth=0, $args=array()) 
+    {
+        /*
+            $output .= "</div>\n";
+            $output .= "</ul>\n";
+        */
     }
 
     protected function signalEnd($name)
@@ -109,6 +87,36 @@ class bootstrap_generic_menu_walker
             return '<' . $name . 'class="' . $class . '"' . '>';
         }
     }
+    
+    // Variables shared
+    protected $output = null;
+
+    // Functions
+    protected function appendOutput($appendText)
+    {
+        $this->output .= $appendText;
+    }
+
+    protected function getOutput()
+    {
+        return $this->output;
+    }
+
+    protected function clearOutput()
+    {
+        $this->output = null;
+    }
+
+    protected function mergeClasses($Array)
+    {
+        return $this->classEncapsulation(implode(" ", $Array));
+    }
+
+    protected function classEncapsulation($str)
+    {
+        return '"' . $str . '"';
+    }
+
 
 };
 ?>

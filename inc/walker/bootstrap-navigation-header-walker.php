@@ -17,6 +17,7 @@ class bootstrap_header_menu_walker
 
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
+        
         // Preparing variables
         $object = $item->object;
         $type = $item->type;
@@ -24,7 +25,7 @@ class bootstrap_header_menu_walker
         $description = $item->description;
         $permalink = $item->url;
 
-        $this->appendOutput("<li class='" . .  implode(" ", $item->classes) . "'>");
+        $this->appendOutput("<li class='" .  implode(" ", $item->classes) . "'>");
         
         //Add SPAN if no Permalink
         if( $permalink && $permalink != '#' ) 

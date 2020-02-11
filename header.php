@@ -30,17 +30,22 @@
     <body onload="loadUI()">
         <header> 
             <?php 
-                if ( has_nav_menu('header-menu') )
-                {
-                    wp_nav_menu(
-                        array(
-                                'theme_location' => 'header-menu',
-                                'menu_class' => 'navigation-menu',
-                                'item_spacing' => 'preserve',
-                                'walker' => new bootstrap_header_menu_walker()
-                        )
-                    );  
-                }
+                if ( has_nav_menu('header-menu') ):
+            ?>
+                    <?php 
+                            wp_nav_menu(
+                                array(
+                                        'container' => 'nav',
+                                        'container_id' => 'navigation-header-menu',
+                                        'theme_location' => 'header-menu',
+                                        'menu_class' => 'navigation-menu',
+                                        'item_spacing' => 'preserve',
+                                        'walker' => new bootstrap_header_menu_walker()
+                                )
+                            );  
+                        ?>
+            <?php
+                endif; 
             ?>
         </header>
 
