@@ -26,6 +26,19 @@ $font-family-sans-serif: $title_font;
 $font-family-monospace: $body_font;
 $font-family-base: $font-family-sans-serif;
 
+%auto-center
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main 
+{
+    @extend .w-75;
+    @extend .p-3;
+    @extend %auto-center;
+
+}
 
 @import './info.scss';
 @import './templates.scss';
