@@ -1,5 +1,5 @@
     <footer>
-        <div class="bg-dark"> 
+        <div class="footer-cover"> 
             <div id="footer-widget" class="page-footer widget-area"> 
                 <?php 
                     if( function_exists( 'dynamic_sidebar' ) ) :
@@ -12,8 +12,9 @@
                     endif;
                 ?>
             </div>
-            
-            <div> 
+        </div>
+
+        <div class="footer-cover"> 
                 <nav class="navbar justify-content-center ">           
                     <?php 
                         if ( has_nav_menu( 'social-menu' ) )
@@ -29,10 +30,9 @@
                         };
                     ?>
                 </nav>
-            </div>
         </div>
 
-        <div class="bg-dark">
+        <div id="footer-misc">
             <nav class="">           
                 <?php 
                     if ( has_nav_menu( 'misc-menu' ) )
