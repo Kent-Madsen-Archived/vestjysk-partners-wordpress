@@ -17,8 +17,7 @@
                         null );
                         
         wp_enqueue_style( 'google fonts', 
-                        'https://fonts.google.com/?selection.family=Open+Sans|Roboto', 
-                        false );
+                        'https://fonts.google.com/?selection.family=Open+Sans|Roboto');
         
     }; 
 ?>

@@ -1,30 +1,6 @@
 <!-- Bootstrap Navigation Walker -->
 <?php 
 
-
-function my_wp_nav_menu_objects( $items, $args ) 
-{
-    apply_logo($items, $args);
-
-    return $items;
-}
-
-function apply_logo($items, $args)
-{
-    foreach( $items as &$item )
-    {
-        $icon = get_field('icon-name', $item);
-    
-        if ($icon)
-        {
-            $item->title = '<i class="' . $icon . '"></i>';
-        }
-
-    }
-
-    return $items;
-}
-
 class bootstrap_menu_walker extends Walker_Nav_Menu
 {
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
