@@ -1,7 +1,35 @@
 <?php 
 
-class bootstrap_generic_menu_walker extends Walker_Nav_Menu
+class bootstrap_generic_menu_walker 
+    extends Walker_Nav_Menu
 {
+    protected $output = null;
+
+    protected function appendOutput($appendText)
+    {
+        $this->output .= $appendText;
+    }
+
+    protected function getOutput()
+    {
+        return $this->output;
+    }
+
+    protected function clearOutput()
+    {
+        $this->output = null;
+    }
+
+    protected function mergeClasses($Array)
+    {
+        return $this->classEncapsulation(implode(" ", $Array));
+    }
+
+    protected function classEncapsulation($str)
+    {
+        return '"' . $str . '"';
+    }
+
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
         // Preparing variables
@@ -63,6 +91,23 @@ class bootstrap_generic_menu_walker extends Walker_Nav_Menu
         
         $output .= "</div>\n";
         $output .= "</ul>\n";
+    }
+
+    protected function signalEnd($name)
+    {
+        return '</' . $name . '>';
+    }
+
+    protected function signalStart($name, $class)
+    {
+        if($class == null)
+        {
+            return '<' . $name . 'class="' . '"' . '>';
+        }
+        else 
+        {
+            return '<' . $name . 'class="' . $class . '"' . '>';
+        }
     }
 
 };

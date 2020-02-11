@@ -29,23 +29,19 @@
 
     <body onload="loadUI()">
         <header> 
-
-            <nav class="secondary-header navbar navbar-expand" > 
-                <?php 
-                    if ( has_nav_menu('header-menu') )
-                    {
-                        wp_nav_menu(
-                            array(
+            <?php 
+                if ( has_nav_menu('header-menu') )
+                {
+                    wp_nav_menu(
+                        array(
                                 'theme_location' => 'header-menu',
-                                'menu_class' => 'navbar-nav navbar-expand-lg justify-content-center',
+                                'menu_class' => 'navigation-menu',
                                 'item_spacing' => 'preserve',
                                 'walker' => new bootstrap_header_menu_walker()
-                            )
-                        );  
-                    }
-                ?>
-            </nav>
-            
+                        )
+                    );  
+                }
+            ?>
         </header>
 
         <main>
