@@ -1,7 +1,7 @@
 <!-- Bootstrap Navigation Walker -->
 <?php 
 
-class bootstrap_menu_walker_generic extends Walker_Nav_Menu
+class bootstrap_generic_menu_walker extends Walker_Nav_Menu
 {
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {

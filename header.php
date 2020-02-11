@@ -35,7 +35,7 @@
                                 'theme_location' => 'header-menu',
                                 'menu_class' => 'navbar-nav justify-content-center',
                                 'item_spacing' => 'preserve',
-                                'walker' => new bootstrap_menu_walker()
+                                'walker' => new bootstrap_header_menu_walker()
                             )
                         );  
                     }

@@ -23,7 +23,7 @@
                                     'theme_location' => 'social-menu',
                                     'menu_class' => 'nav',
                                     'item_spacing' => 'preserve',
-                                    'walker' => new social_menu_walker()
+                                    'walker' => new bootstrap_social_menu_walker()
                                 )
                             );  
                         };
@@ -42,7 +42,7 @@
                                 'theme_location' => 'misc-menu',
                                 'menu_class' => 'nav justify-content-center',
                                 'item_spacing' => 'preserve',
-                                'walker' => new bootstrap_menu_walker()
+                                'walker' => new bootstrap_footer_menu_walker()
                             )
                         );  
                     };

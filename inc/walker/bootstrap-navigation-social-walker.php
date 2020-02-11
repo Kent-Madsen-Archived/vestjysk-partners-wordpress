@@ -1,7 +1,7 @@
 <!-- Bootstrap Navigation Social Walker -->
 <?php 
 
-class social_menu_walker extends bootstrap_menu_walker
+class bootstrap_social_menu_walker extends bootstrap_base_menu_walker
 {
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {   
