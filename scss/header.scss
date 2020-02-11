@@ -1,0 +1,11 @@
+.secondary-header
+{
+    @extend .bg-secondary;
+    @extend .navbar-dark;
+}
+
+.secondary-header #menu-header
+{
+    @extend .navbar-light;
+
+}

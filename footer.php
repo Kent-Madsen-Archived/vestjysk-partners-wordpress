@@ -1,6 +1,6 @@
     <footer>
-        <div class="footer-cover"> 
-            <div id="footer-widget" class="page-footer widget-area"> 
+        <div id="footer-widget-area"> 
+            <div id="footer-widget" class="page-footer widget-area secondary-footer-cover"> 
                 <?php 
                     if( function_exists( 'dynamic_sidebar' ) ) :
 
@@ -14,8 +14,8 @@
             </div>
         </div>
 
-        <div class="footer-cover"> 
-                <nav class="navbar justify-content-center ">           
+        <div id="footer-social-menu"> 
+                <nav class="secondary-footer secondary-footer-cover navbar justify-content-center">           
                     <?php 
                         if ( has_nav_menu( 'social-menu' ) )
                         {
@@ -32,8 +32,8 @@
                 </nav>
         </div>
 
-        <div id="footer-misc">
-            <nav class="">           
+        <div id="footer-misc-menu" class="secondary-footer-cover">
+            <nav>           
                 <?php 
                     if ( has_nav_menu( 'misc-menu' ) )
                     {

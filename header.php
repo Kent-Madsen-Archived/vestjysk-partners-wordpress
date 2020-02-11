@@ -30,14 +30,14 @@
     <body onload="loadUI()">
         <header> 
 
-            <nav class="navbar navbar-expand navbar-light bg-primary" > 
+            <nav class="secondary-header navbar navbar-expand" > 
                 <?php 
                     if ( has_nav_menu('header-menu') )
                     {
                         wp_nav_menu(
                             array(
                                 'theme_location' => 'header-menu',
-                                'menu_class' => 'navbar-nav justify-content-center',
+                                'menu_class' => 'navbar-nav navbar-expand-lg justify-content-center',
                                 'item_spacing' => 'preserve',
                                 'walker' => new bootstrap_header_menu_walker()
                             )

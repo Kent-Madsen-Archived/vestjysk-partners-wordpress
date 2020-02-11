@@ -1,26 +1,28 @@
-footer .bg-dark p 
+
+
+.secondary-footer-cover
+{
+    @extend .bg-secondary;
+}
+
+.secondary-footer-cover p 
 {
     @extend .text-light;
 }
 
-.footer-cover
+#footer-misc-menu
 {
-    @extend .bg-dark;
+    
 }
 
-#footer-misc
-{
-    @extend .bg-dark;
-}
-
-#footer-misc nav ul li a
+#footer-misc-menu nav ul li a
 {
     @extend .small;
 }
 
-footer .bg-dark h1,
-footer .bg-dark h2,
-footer .bg-dark h3 
+.secondary-footer-cover h1,
+.secondary-footer-cover h2,
+.secondary-footer-cover h3 
 {
     @extend .text-light;
 }
