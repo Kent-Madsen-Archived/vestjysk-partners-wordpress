@@ -1,6 +1,7 @@
     <footer>
-        <div id="footer-widget-area"> 
-            <div id="footer-widget" class="page-footer widget-area secondary-footer-cover"> 
+        <div id="footer-widget-area" class="overlay"> 
+            <div id="footer-widget" 
+                 class="page-footer widget-area"> 
                 <?php 
                     if( function_exists( 'dynamic_sidebar' ) ) :
 
@@ -14,8 +15,8 @@
             </div>
         </div>
 
-        <div id="footer-social-menu"> 
-                <nav class="secondary-footer secondary-footer-cover navbar justify-content-center">           
+        <div id="footer-social-menu" class="overlay"> 
+                <nav class="navbar justify-content-center">           
                     <?php 
                         if ( has_nav_menu( 'social-menu' ) )
                         {
@@ -32,7 +33,8 @@
                 </nav>
         </div>
 
-        <div id="footer-misc-menu" class="secondary-footer-cover">
+        <div id="footer-misc-menu" 
+             class="overlay">
             <nav>           
                 <?php 
                     if ( has_nav_menu( 'misc-menu' ) )
@@ -61,6 +63,15 @@
         <!-- -->
 <script src="<?php echo (get_template_directory_uri() . "/content/javascript/ui.js"); ?>">
     execute();
+</script>
+
+<script> 
+    colorUI("<?php echo get_template_directory_uri() . "/content/settings/some.json" ?>");
+</script>
+
+
+<script> 
+    overlayUI("<?php echo get_template_directory_uri() . "/content/settings/ui.json" ?>");
 </script>
 
 <!-- React Components -->

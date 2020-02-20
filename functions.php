@@ -65,4 +65,20 @@ function theme_setup_after()
       // Custom widget filter setup
     add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
 
+    function output_log($message)
+    {
+      
+        if (is_array($message) || is_object($message))
+        {
+          error_log( print_r( $message, true ) );
+        }
+        else 
+        {
+          error_log($message);
+        }
+      
+    }
+
+    
+
 ?>

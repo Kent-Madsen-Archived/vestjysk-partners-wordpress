@@ -4,6 +4,7 @@
     <head <?php language_attributes(); ?> class="no-js no-svg">
         <meta charset="<?php bloginfo( 'charset' );?>">
         
+
         <meta name="viewport" 
               content="width=device-width, initial-scale=1.0">
 
@@ -19,7 +20,8 @@
         <link rel="profile" 
               href="http://gmpg.org/xfn/11">
         
-        <script src="https://kit.fontawesome.com/2ea1bb2ea9.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/2ea1bb2ea9.js" 
+                crossorigin="anonymous"></script>
     
         
         <?php 
@@ -32,7 +34,9 @@
             <?php 
                 if ( has_nav_menu('header-menu') ):
             ?>
-                <nav id="navigation-header-menu" class="secondary-header"> 
+                <nav id="navigation-header-menu" 
+                     class="overlay"> 
+
                     <div class="">
                           <!-- Navbar brand -->
                         <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
@@ -41,6 +45,7 @@
                             ?>
                         </a>
                     </div>
+
                         <div id="navigation-menu-header-container"> 
                             <?php 
                                     wp_nav_menu(
@@ -73,7 +78,9 @@
                                     aria-controls="navigation-menu-header-container" 
                                     aria-expanded="false" 
                                     aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                                
+                                <span class="navbar-toggler-icon">
+                                </span>
                             </button>
                         </div>
                 </nav>

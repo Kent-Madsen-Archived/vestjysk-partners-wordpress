@@ -1,0 +1,90 @@
+{
+    "settings":
+    [
+        {
+            "area":"header",
+
+            "container":"navigation",
+            "identifier":"navigation-header-menu",
+            
+            "current":2,
+
+            "data":
+            [
+                {        
+                    "class":"overlay-primary"
+                },
+
+                {
+                    "class":"overlay-secondary"
+                }
+            ]        
+            
+        },
+
+        {
+            "area":"footer",
+            
+            "container":"widget",
+            "identifier":"footer-widget-area",
+            
+            
+            "current":2,
+
+            "data":
+            [
+                {        
+                    "class":"overlay-primary"
+                },
+
+                {
+                    "class":"overlay-secondary"
+                }
+            ]   
+            
+        },
+
+        {
+            "area":"footer",
+            
+            "container":"navigation",
+            "identifier":"footer-social-menu",
+            
+            
+            "current":2,
+
+            "data":
+            [
+                {        
+                    "class":"overlay-primary"
+                },
+
+                {
+                    "class":"overlay-secondary"
+                }
+            ]  
+            
+        },
+
+        {
+            "area":"footer",
+            
+            "container":"navigation",
+            "identifier":"footer-misc-menu",
+            
+            "current":2,
+
+            "data":
+            [
+                {        
+                    "class":"overlay-primary"
+                },
+
+                {
+                    "class":"overlay-secondary"
+                }
+            ]        
+            
+        }
+    ]
+}

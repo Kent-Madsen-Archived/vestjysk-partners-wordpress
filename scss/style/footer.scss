@@ -50,27 +50,6 @@
 
 }
 
-
-.widget-size-1
-{
-    grid-column: span 1;
-}
-
-.widget-size-2
-{
-    grid-column: span 2;
-}
-
-.widget-size-3
-{
-    grid-column: span 3;
-}
-
-.widget-size-4
-{
-    grid-column: span 4;
-}
-
 #menu-social li a 
 {
     font-size: 20px;
@@ -80,4 +59,47 @@
 .misc .menu-misc-container
 {
 
+}
+
+
+.widget-group-5
+{
+    grid-column: span 4;
+}
+
+
+.widget-group-6
+{
+    grid-column: span 1;
+}
+
+
+.widget-group-7
+{
+    grid-column: span 1;
+}
+
+.widget-group-8
+{
+    grid-column: span 1;
+}
+
+.widget-group-1
+{
+    grid-column: span 2;
+}
+
+.widget-group-2
+{
+    grid-column: span 2;
+}
+
+.widget-group-4
+{
+    grid-column: span 2;
+}
+
+.widget-group-3
+{
+    grid-column: span 2;
 }

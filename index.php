@@ -2,23 +2,21 @@
     get_header();
 ?>
 
-<!-- Index Page -->
             <?php 
-            
-                if( is_page() || is_single() ):
+                if( ( is_page() || is_single() ) ):
             ?>
 
-            <!-- Template -->
             <?php 
+                // Template Area
                     while( have_posts() ):
                 ?>
 
                     <?php 
-                    the_post();
+                        the_post();
                     ?>
 
                     <?php
-                    the_content();
+                        the_content();
                     ?>
 
                 <?php 

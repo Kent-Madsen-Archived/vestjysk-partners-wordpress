@@ -2,6 +2,8 @@
 
 class bootstrap_social_menu_walker extends bootstrap_base_menu_walker
 {
+    private $linkId = 0;
+
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {   
         $object = $item->object;
@@ -14,9 +16,10 @@ class bootstrap_social_menu_walker extends bootstrap_base_menu_walker
         
         //Add SPAN if no Permalink
         if( $permalink && $permalink != '#' ) 
-        {
-            
-                $output .= "<a class='nav-link' href='" . $permalink . "'>";
+        {    
+                $this->linkId = $this->linkId + 1;
+
+                $output .= "<a class='some-link some-link-" . strval($this->linkId) . "' href='" . $permalink . "'>";
         } 
         else 
         {

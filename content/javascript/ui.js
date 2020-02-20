@@ -12,7 +12,7 @@ function apply()
 
 function applyHeaderHeaderArea()
 {
-    console.log(document.getElementsByClassName('navbar-toggler'));
+    //console.log(document.getElementsByClassName('navbar-toggler'));
 
     var element = document.getElementsByClassName('submenu');
 
@@ -23,12 +23,12 @@ function applyHeaderHeaderArea()
         var currentSelectedElement = element[idx];
         
         
-        console.log("before");
-        console.log(currentSelectedElement);
+        //console.log("before");
+        //console.log(currentSelectedElement);
 
         var id = travelFindMenuIdentity( currentSelectedElement );
-        console.log("found id");
-        console.log(id);
+        //console.log("found id");
+        //console.log(id);
 
         currentSelectedElement.setAttribute('aria-labelledby', id);
 
@@ -40,8 +40,8 @@ function travelFindMenuIdentity(node)
 {
     var currentParent = node.parentNode;
 
-    console.log("Parent");
-    console.log(currentParent);
+    //console.log("Parent");
+    //console.log(currentParent);
 
     var idx = 0;
 
@@ -50,14 +50,14 @@ function travelFindMenuIdentity(node)
         idx++)
     {
         var currentSelectedChild = currentParent.childNodes[idx];
-        console.log(currentSelectedChild);
+        //console.log(currentSelectedChild);
         
-        console.log("Child");
-        console.log(currentSelectedChild);
+        //console.log("Child");
+        //console.log(currentSelectedChild);
 
         if(currentSelectedChild.tagName == 'A')
         {
-            console.log("is link");
+            //console.log("is link");
             return currentSelectedChild.id;
         }
     }
@@ -68,7 +68,7 @@ function applyFooterWidgetArea()
 {
     var element = document.getElementById('footer-widget');
 
-    console.log(element.childNodes.length);
+    //console.log(element.childNodes.length);
     
     if( element.childNodes.length >= 4 )
     {
