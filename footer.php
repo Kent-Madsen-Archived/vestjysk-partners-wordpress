@@ -1,5 +1,7 @@
     <footer>
-        <div id="footer-widget-area" class="overlay"> 
+        <div id="footer-widget-area" 
+             class="overlay"> 
+
             <div id="footer-widget" 
                  class="page-footer widget-area"> 
                 <?php 
@@ -15,7 +17,8 @@
             </div>
         </div>
 
-        <div id="footer-social-menu" class="overlay"> 
+        <div id="footer-social-menu" 
+             class="overlay"> 
                 <nav class="navbar justify-content-center">           
                     <?php 
                         if ( has_nav_menu( 'social-menu' ) )
@@ -51,6 +54,7 @@
                 ?>
             </nav> 
         </div>
+
     </footer>
 </body>
 
@@ -75,7 +79,5 @@
 </script>
 
 <!-- React Components -->
-<!-- <script src="<?php echo (get_template_directory_uri() . "/content/babel/moveBack.jsx"); ?>" type="text/babel"> 
-</script> -->
 
 <!-- Analytics tool -->
