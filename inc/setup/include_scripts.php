@@ -64,6 +64,13 @@
                         null, 
                         false );
 
+         
+         wp_enqueue_script( 'resize', 
+                        get_template_directory_uri() . './content/javascript/size.js', 
+                        null, 
+                        null, 
+                        false );
+
         theme_style();
     };
 

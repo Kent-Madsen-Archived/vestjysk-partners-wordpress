@@ -30,7 +30,7 @@
     </head>
 
     <body onload="loadUI()">
-        <header> 
+        <header id="header-element"> 
             <?php 
                 if ( has_nav_menu('header-menu') ):
             ?>
