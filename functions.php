@@ -1,5 +1,5 @@
 <?php
-include 'include.php';
+// include 'include.php';
 
 
 // Set Theme variables
@@ -42,28 +42,28 @@ function theme_setup_after()
     ) );
 
       // Registration
-      register_menus();
+      // register_menus();
 };
 
 // Add Triggers
     // Actions
       // Boostrap theme
-    add_action('after_setup_theme', 'theme_setup_after');
+    //add_action('after_setup_theme', 'theme_setup_after');
 
     // Setup Necesarry Scripts and code
-    add_action( 'wp_enqueue_scripts', 'theme_scripts' );
-    add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+    //add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+   // add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
     // Setup Widget Areas
-    add_action('widgets_init', 'register_widget_init');
+    //add_action('widgets_init', 'register_widget_init');
 
     // Filters
       // Custom menu filter setup
-    add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
-    add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+   // add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+  //  add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
       // Custom widget filter setup
-    add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
+//    add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
 
     function output_log($message)
     {
