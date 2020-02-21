@@ -1,7 +1,7 @@
 <?php 
 
-class bootstrap_base_menu_walker 
-    extends bootstrap_generic_menu_walker
+class bootstrap_generic_menu_walker 
+    extends Walker_Nav_Menu
 {
     function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
@@ -52,7 +52,6 @@ class bootstrap_base_menu_walker
             $output .= '</span>';
         }
         */
-        
     }
     
     function start_lvl( &$output, $depth = 0, $arg = Array() )
@@ -66,11 +65,58 @@ class bootstrap_base_menu_walker
 
     function end_lvl(&$output, $depth=0, $args=array()) 
     {
-        /* 
-        $output .= "</div>\n";
-        $output .= "</ul>\n";
+        /*
+            $output .= "</div>\n";
+            $output .= "</ul>\n";
         */
     }
+
+    protected function signalEnd($name)
+    {
+        return '</' . $name . '>';
+    }
+
+    protected function signalStart($name, $class)
+    {
+        if($class == null)
+        {
+            return '<' . $name . 'class="' . '"' . '>';
+        }
+        else 
+        {
+            return '<' . $name . 'class="' . $class . '"' . '>';
+        }
+    }
+    
+    // Variables shared
+    protected $output = null;
+
+    // Functions
+    protected function appendOutput($appendText)
+    {
+        $this->output .= $appendText;
+    }
+
+    protected function getOutput()
+    {
+        return $this->output;
+    }
+
+    protected function clearOutput()
+    {
+        $this->output = null;
+    }
+
+    protected function mergeClasses($Array)
+    {
+        return $this->classEncapsulation(implode(" ", $Array));
+    }
+
+    protected function classEncapsulation($str)
+    {
+        return '"' . $str . '"';
+    }
+
 
 };
 ?>

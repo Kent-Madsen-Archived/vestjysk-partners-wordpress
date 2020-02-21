@@ -1,0 +1,14 @@
+.link 
+{
+    @extend .nav-link;
+}
+
+.some-link 
+{
+    @extend .nav-link;
+}
+
+.overlay-secondary
+{
+    @extend .bg-secondary;
+}

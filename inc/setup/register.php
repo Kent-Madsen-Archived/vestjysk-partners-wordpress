@@ -1,4 +1,3 @@
-<!-- PHP : Register file -->
 <?php 
 
 function register_menus()
@@ -16,6 +15,16 @@ function register_widget_init()
     register_sidebar( array(
         'name'=> __('Footer widgets area'),
         'id' => 'footer-widget',
+        'before_widget' => '<div class="widgetizedArea">',
+        'after_widget' => '</div>',
+        
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ) );
+
+    register_sidebar( array(
+        'name'=> __('Header widgets area'),
+        'id' => 'header-widget',
         'before_widget' => '<div class="widgetizedArea">',
         'after_widget' => '</div>',
         

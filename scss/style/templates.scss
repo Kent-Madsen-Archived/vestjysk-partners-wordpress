@@ -1,0 +1,22 @@
+
+.ui-label-logo
+{
+    @extend .d-flex;
+    
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.ui-label-logo .top 
+{
+    order: 1;
+    
+}
+
+.ui-label-logo .bottom
+{
+    order: 2;
+
+}

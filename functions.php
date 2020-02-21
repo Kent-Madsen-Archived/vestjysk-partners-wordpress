@@ -1,22 +1,6 @@
-<!-- PHP : Functions file -->
 <?php
-require get_parent_theme_file_path('/inc/admin/customize.php');
+include 'include.php';
 
-//
-require get_parent_theme_file_path('/inc/widget/footer-widget.php');
-require get_parent_theme_file_path('/inc/debug/debug.php');
-
-
-//
-require get_parent_theme_file_path('/inc/setup/include_styles.php');
-require get_parent_theme_file_path('/inc/setup/include_scripts.php');
-
-require get_parent_theme_file_path('/inc/setup/register.php');
-
-// Used templates
-require get_parent_theme_file_path('/inc/walker/boostrap-navigation-social-walker.php');
-require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-footer-walker.php');
-require get_parent_theme_file_path('/inc/walker/bootstrap-navigation-walker.php');
 
 // Set Theme variables
 $theme = wp_get_theme();
@@ -24,6 +8,13 @@ $theme = wp_get_theme();
 $theme_version = $theme['Version'];
 $theme_version = $theme['Name'];
 $theme_version = $theme['Description'];
+
+/* 
+
+	  add_theme_support( 'customize-selective-refresh-widgets' );
+	  add_theme_support( 'editor-styles' );
+      add_theme_support( 'wp-block-styles' );
+*/
 
 function theme_setup_after()
 {
@@ -37,9 +28,18 @@ function theme_setup_after()
       // Adds Support for wordpress to handle thumbnails
       add_theme_support( 'post-thumbnails' );
 
-	  add_theme_support( 'editor-styles' );
-      add_theme_support( 'wp-block-styles' );
-	  add_theme_support( 'customize-selective-refresh-widgets' );
+      //
+      add_theme_support( 'custom-logo' );
+
+      add_theme_support( 'custom-logo', array(
+        'height'      => 400,
+        'width'       => 400,
+        
+        'flex-height' => true,
+        'flex-width'  => true,
+
+        'header-text' => array( 'site-title', 'site-description' ),
+    ) );
 
       // Registration
       register_menus();
@@ -47,18 +47,38 @@ function theme_setup_after()
 
 // Add Triggers
     // Actions
+      // Boostrap theme
     add_action('after_setup_theme', 'theme_setup_after');
 
+    // Setup Necesarry Scripts and code
     add_action( 'wp_enqueue_scripts', 'theme_scripts' );
     add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+    // Setup Widget Areas
     add_action('widgets_init', 'register_widget_init');
 
     // Filters
+      // Custom menu filter setup
     add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
     add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
+      // Custom widget filter setup
     add_filter('dynamic_sidebar_params', 'my_dynamic_sidebar_params');
 
-    add_action( 'customize_register', 'theme_customize_register' );
+    function output_log($message)
+    {
+      
+        if (is_array($message) || is_object($message))
+        {
+          error_log( print_r( $message, true ) );
+        }
+        else 
+        {
+          error_log($message);
+        }
+      
+    }
+
+    
+
 ?>

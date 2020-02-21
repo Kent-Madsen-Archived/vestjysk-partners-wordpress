@@ -1,0 +1,69 @@
+.overlay-secondary
+{
+
+}
+
+.overlay-secondary h1,
+.overlay-secondary h2,
+.overlay-secondary h3
+{
+    @extend .text-light;
+
+}
+
+.overlay-secondary p 
+{
+    @extend .text-light;
+
+}
+
+
+#footer-misc-menu nav ul li a
+{
+    @extend .small;
+}
+
+
+.widget-area
+{
+    display: grid;
+
+}
+
+.widget-area
+{
+
+}
+
+.widget-area #text
+{
+    display:hidden;
+}
+
+#menu-social li
+{
+    margin-left: 8px;
+    margin-right: 8px;
+
+}
+
+#menu-social li a 
+{
+    font-size: 20px;
+}
+
+
+.misc .menu-misc-container
+{
+
+}
+
+.widget-group-1
+{
+    grid-column: span 2;
+}
+
+.widget-group-3
+{
+    grid-column: span 2;
+}

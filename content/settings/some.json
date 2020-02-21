@@ -1,0 +1,22 @@
+{
+    "settings":
+    [
+        {        
+            "link":{
+                "class":"some-link-1",
+                "inactive":"blue",
+                "active":"",
+                "hover":""
+            }
+        },
+
+        {
+            "link":{
+                "class":"some-link-2",
+                "inactive":"",
+                "active":"",
+                "hover":""
+            }
+        }
+    ]
+}
