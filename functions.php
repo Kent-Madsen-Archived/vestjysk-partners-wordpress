@@ -1,5 +1,7 @@
 <?php
-// include 'include.php';
+require get_parent_theme_file_path('/theme-modules/Modules.php');
+
+use VestJyskPartnersThemeModules\Setup as VPSetup;
 
 
 // Set Theme variables
