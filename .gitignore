@@ -1,7 +1,8 @@
 *.jpg
 *.png
 
+style.css
+
 
 # Remove development files
-*.css
 *.map
