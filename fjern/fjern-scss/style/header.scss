@@ -1,0 +1,45 @@
+.secondary-header
+{
+    @extend .bg-secondary;
+}
+
+.secondary-header #menu-header
+{
+    @extend .navbar-light;
+
+}
+
+#navigation-header-menu
+{
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .navbar-dark;   
+    @extend .mr-auto;
+
+}
+
+.header-navigation-menu-link
+{
+    @extend .nav-link;
+}
+
+.header-navigation-menu-button
+{
+    @extend .nav-item;
+}
+
+
+.navigation-menu
+{
+    @extend .navbar;
+    @extend .mr-auto;
+
+    margin:0px;
+}
+
+#navigation-menu-header-container
+{
+    @extend .navbar;
+}
+
+.dropdown:hover .dropdown-menu {display: block;}
