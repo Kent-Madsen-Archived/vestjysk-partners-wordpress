@@ -28,7 +28,7 @@ class PackageStyle
     private $ver = null;
     
     //
-    private $media = null;
+    private $mediaType = null;
 
 
         //
@@ -74,14 +74,14 @@ class PackageStyle
         $this->Version = $varTo;
     }
 
-    public function getMedia()
+    public function getMediaType()
     {
-        return $this->media;
+        return $this->mediaType;
     }
 
-    public function setMedia($varTo)
+    public function setMediaType($varTo)
     {
-        $this->media = $varTo;
+        $this->mediaType = $varTo;
     }
 }
 

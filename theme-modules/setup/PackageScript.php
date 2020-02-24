@@ -29,7 +29,7 @@ class PackageScript
         return $this->Version;
     }
 
-    public function setVersion($varTo)
+    public function setVersion( $varTo )
     {
         $this->Version = $varTo;
     }

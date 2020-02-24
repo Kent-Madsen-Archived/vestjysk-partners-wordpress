@@ -1,20 +1,11 @@
 <?php 
 namespace VestJyskPartnersThemeModules\Setup;
 
-require get_parent_theme_file_path( '/theme-modules/setup/Registers/RegisterMenu.php' );
-require get_parent_theme_file_path( '/theme-modules/setup/Registers/RegisterWidget.php' );
-
-require get_parent_theme_file_path( '/theme-modules/setup/position.php' );
-
-
+require get_parent_theme_file_path( '/theme-modules/setup/Position.php' );
 require get_parent_theme_file_path( '/theme-modules/setup/Version.php' );
-
 require get_parent_theme_file_path( '/theme-modules/setup/PackageManager.php' );
 
-require get_parent_theme_file_path( '/theme-modules/setup/Deprecated/NotSure.php' );
-
 use VestJyskPartnersThemeModules\Setup\Registers as SetupRegisters;
-
 
 class ThemeSetup
 {

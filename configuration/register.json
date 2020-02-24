@@ -1,0 +1,50 @@
+{
+    "sidebar":
+    [
+        {
+            "title":"",
+            "sidebar-id":"",
+            
+            "settings":
+            {
+                "widget":
+                {
+                    "before": "",
+                    "after":""
+                },
+
+                "title":
+                {
+                    "before": "",
+                    "after": ""
+                }
+            }
+
+
+        },
+        {
+
+        }
+    ],
+
+    "menues":
+    [
+        {    
+            "menu-id-name": "",
+            "title": "",
+            "domain": ""
+        },
+        
+        {    
+            "menu-id-name": "",
+            "title": "",
+            "domain": ""
+        },
+
+        {    
+            "menu-id-name": "",
+            "title": "",
+            "domain": ""
+        }
+    ]
+}

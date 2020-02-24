@@ -9,6 +9,7 @@ class PackageManager
 {
     public function __construct()
     {
+        
 
     }
     
@@ -17,15 +18,25 @@ class PackageManager
         
     }
 
-
-
-    public function loadScript($var)
+    public function addScripts()
     {
 
     }
 
-    public function loadStyle($var)
+    public function getScripts()
     {
+
+    }
+
+    public function addStyles( $title, $source_url, $dependencies, $version, $mediatype )
+    {
+        $new_style = new PackageStyle();
+
+        $new_style->setSourceUrl($source_url);
+        $new_style->setTitle($title);
+        $new_style->setDependencies($dependencies);
+        $new_style->setVersion($version);
+        $new_style->setMediaType($mediatype);
 
     }
 
