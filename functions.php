@@ -1,6 +1,7 @@
 <?php
 require get_parent_theme_file_path('/theme-modules/Modules.php');
 require get_parent_theme_file_path('/wp/bootstrap-navigation.php');
+
 include get_parent_theme_file_path('/registers/RegisterMenu.php');
 include get_parent_theme_file_path('/registers/RegisterWidget.php');
 
@@ -63,9 +64,8 @@ function theme_vjp_register_ui()
 
   $register_ui = json_decode($text, true);
   
-  theme_vjp_register_sidebar($register_ui["sidebar"]);
   theme_vjp_register_menues($register_ui["menues"]);
-  
+  theme_vjp_register_sidebar($register_ui["widgets"]);
 };
 
 function theme_vjp_register_sidebar($object)
@@ -108,9 +108,92 @@ function theme_vjp_styles()
 
 function theme_vjp_scripts()
 {
+  $text = file_get_contents( get_parent_theme_file_path() . "/configuration/scripts.json");
+  $scripts_json_decoded = json_decode($text);
+};
+
+function theme_vjp_additional_scripts()
+{
   
+};
+
+function theme_vjp_apply_filters()
+{
 
 };
+
+
+function my_wp_nav_menu_objects( $items, $args ) 
+{
+    apply_logo($items, $args);
+
+    return $items;
+}
+
+function my_wp_nav_menu_items( $items, $args ) 
+{
+    $menu = wp_get_nav_menu_object($args->menu);
+
+    return $items;
+};
+
+function register_widget_init()
+{
+    register_sidebar( array(
+        'name'=> __('Footer widgets area'),
+        'id' => 'footer-widget',
+        'before_widget' => '<div class="widgetizedArea">',
+        'after_widget' => '</div>',
+        
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ) );
+
+    register_sidebar( array(
+        'name'=> __('Header widgets area'),
+        'id' => 'header-widget',
+        'before_widget' => '<div class="widgetizedArea">',
+        'after_widget' => '</div>',
+        
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ) );
+
+};
+
+function apply_logo($items, $args)
+{
+    foreach( $items as &$item )
+    {
+        $icon = get_field('icon-name', $item);
+    
+        if ($icon)
+        {
+            $item->title = '<i class="' . $icon . '"></i>';
+        }
+
+    }
+
+    return $items;
+}
+
+
+
+if(function_exists('register_widget_init'))
+{
+  add_action('widgets_init', 'register_widget_init');
+}
+
+if(function_exists('my_wp_nav_menu_items'))
+{
+  add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+}
+
+if(function_exists('my_wp_nav_menu_objects'))
+{
+  add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+}
+
 
 //
 if( function_exists( 'theme_vjp_styles' ) )
