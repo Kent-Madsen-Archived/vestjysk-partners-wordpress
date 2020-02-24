@@ -21,30 +21,27 @@
             }
 
 
-        },
-        {
-
         }
     ],
 
     "menues":
     [
         {    
-            "menu-id-name": "",
-            "title": "",
-            "domain": ""
+            "menu-id-name": "header-menu",
+            "title": "Header Main Area Menu",
+            "domain": "theme-menu"
         },
         
         {    
-            "menu-id-name": "",
-            "title": "",
-            "domain": ""
+            "menu-id-name": "social-menu",
+            "title": "Social media menu",
+            "domain": "theme-menu"
         },
 
         {    
-            "menu-id-name": "",
-            "title": "",
-            "domain": ""
+            "menu-id-name": "misc-menu",
+            "title": "Misc menu",
+            "domain": "theme-menu"
         }
     ]
 }
