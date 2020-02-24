@@ -1,15 +1,18 @@
 <?php
 require get_parent_theme_file_path('/theme-modules/Modules.php');
 
-use VestJyskPartnersThemeModules\Setup as VPSetup;
+use VestJyskPartnersThemeModules\Setup as VJPSetup;
 
+$theme_vjp_setup = new VJPSetup\ThemeSetup();
 
 // Set Theme variables
+/*
 $theme = wp_get_theme();
 
 $theme_version = $theme['Version'];
 $theme_version = $theme['Name'];
 $theme_version = $theme['Description'];
+*/
 
 /* 
 
@@ -50,7 +53,7 @@ function theme_setup_after()
 // Add Triggers
     // Actions
       // Boostrap theme
-    //add_action('after_setup_theme', 'theme_setup_after');
+  add_action('after_setup_theme', 'theme_setup_after');
 
     // Setup Necesarry Scripts and code
     //add_action( 'wp_enqueue_scripts', 'theme_scripts' );
