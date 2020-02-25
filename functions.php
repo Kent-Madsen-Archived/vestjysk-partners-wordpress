@@ -7,6 +7,12 @@ include get_parent_theme_file_path('/registers/RegisterWidget.php');
 
 use VestJyskPartnersThemeModules\Setup as VJPSetup;
 
+if( ! class_exists('Kirki') )
+{
+  include_once( dirname( __FILE__ ) . '/includes/kirki/kirki.php' );
+}
+
+include get_parent_theme_file_path('/theme-modules/Kirki.php');
 
 function output_log($message)
 {
@@ -22,11 +28,19 @@ function output_log($message)
       
 }
 
+function is_debugging()
+{
+  return true;
+}
+
 $theme_vjp_setup = new VJPSetup\ThemeSetup();
+
 
 // Set Theme variables
 function theme_vjp_setup_after()
 {
+  $customizer = new KirkiCustomization();
+
   /* Adds support for wordpress to handle setting the title  */
   add_theme_support( 'title-tag' );
       
@@ -36,6 +50,13 @@ function theme_vjp_setup_after()
 
   // Adds Support for wordpress to handle thumbnails
   add_theme_support( 'post-thumbnails' );
+
+  
+		// Editor Style Support
+    add_editor_style( 'assets/css/editor-style.css' );
+    
+		// Selective Refresh For Widgets
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
   //
   add_theme_support( 'custom-logo' );
@@ -65,13 +86,7 @@ function theme_vjp_register_ui()
   $register_ui = json_decode($text, true);
   
   theme_vjp_register_menues($register_ui["menues"]);
-  theme_vjp_register_sidebar($register_ui["widgets"]);
 };
-
-function theme_vjp_register_sidebar($object)
-{
-  
-}
 
 function theme_vjp_register_menues($object)
 {
@@ -117,11 +132,59 @@ function theme_vjp_additional_scripts()
   
 };
 
-function theme_vjp_apply_filters()
-{
 
+function theme_vjp_register_widgets()
+{
+  $text =  file_get_contents( get_parent_theme_file_path() . "/configuration/register.json");
+  
+  $register_widgets = json_decode($text, true);
+
+  theme_vjp_register_widget($register_widgets["widgets"]); 
 };
 
+theme_vjp_register_widgets();
+
+
+function theme_vjp_register_widget($object)
+{
+  for ( $idx = 0; 
+        $idx < sizeof($object); 
+        $idx++ )
+  {
+    $current = $object[$idx];
+
+    $keys = array(
+      'name', 
+      'id',
+
+      'before_widget',
+      'after_widget',
+
+      'before_title',
+      'after_title'
+    );
+    
+    $values = array(
+      __($current['title']),
+      $current['sidebar-id'],
+
+      $current['settings']['widget']['before'],
+      $current['settings']['widget']['after'],
+      $current['settings']['title']['before'],
+      $current['settings']['title']['after']
+    );
+
+    register_sidebar( 
+      array_combine($keys, $values)
+     );
+
+  } 
+};
+
+if(function_exists('register_widget_init'))
+{
+  add_action('widgets_init', 'theme_vjp_register_widgets');
+}
 
 function my_wp_nav_menu_objects( $items, $args ) 
 {
@@ -135,30 +198,6 @@ function my_wp_nav_menu_items( $items, $args )
     $menu = wp_get_nav_menu_object($args->menu);
 
     return $items;
-};
-
-function register_widget_init()
-{
-    register_sidebar( array(
-        'name'=> __('Footer widgets area'),
-        'id' => 'footer-widget',
-        'before_widget' => '<div class="widgetizedArea">',
-        'after_widget' => '</div>',
-        
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-    ) );
-
-    register_sidebar( array(
-        'name'=> __('Header widgets area'),
-        'id' => 'header-widget',
-        'before_widget' => '<div class="widgetizedArea">',
-        'after_widget' => '</div>',
-        
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-    ) );
-
 };
 
 function apply_logo($items, $args)
@@ -178,12 +217,7 @@ function apply_logo($items, $args)
 }
 
 
-
-if(function_exists('register_widget_init'))
-{
-  add_action('widgets_init', 'register_widget_init');
-}
-
+//
 if(function_exists('my_wp_nav_menu_items'))
 {
   add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
@@ -211,4 +245,8 @@ if( function_exists( 'theme_vjp_setup_after' ) )
 {
   add_action('after_setup_theme', 'theme_vjp_setup_after');
 }
+
+
+
+ 
 ?>

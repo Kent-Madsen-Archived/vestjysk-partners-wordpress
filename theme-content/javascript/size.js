@@ -1,6 +1,6 @@
 function SizeProperty()
 {
-    console.log(screen.height);
+    //console.log(screen.height);
     
     var head = document.head || document.getElementsByTagName('head')[0];
     
@@ -27,7 +27,7 @@ function SizeProperty()
         style.appendChild(document.createTextNode(css));
     }
 
-    console.log(css);
+    //console.log(css);
 
 }
 

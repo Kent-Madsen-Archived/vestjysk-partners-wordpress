@@ -68,18 +68,39 @@
 
 
 <!-- -->
-<script src="<?php echo (get_template_directory_uri() . "/content/javascript/ui.js"); ?>">
-    execute();
-</script>
+    <?php if( is_debugging() == true): ?>
+    <?php 
+    /** 
+     * find en måde at gøre det hele i react, i stedet for individuelle scripts og redux.
+     */
+        
+    ?>
 
-<script> 
-    overlayUI("<?php echo get_template_directory_uri() . "/content/settings/ui.json" ?>");
-</script>
+    
+        <script src="<?php echo (get_template_directory_uri() . "/theme-content/jsx/breadcrumbs.js"); ?>">
+            
+        </script>
+
+        <script src="<?php echo (get_template_directory_uri() . "/theme-content/javascript/color.js"); ?>">
+        </script>
+        
+        <script src="<?php echo (get_template_directory_uri() . "/theme-content/javascript/interface.js"); ?>">
+        </script>
+        
+        <script src="<?php echo (get_template_directory_uri() . "/theme-content/javascript/overlay.js"); ?>">
+        </script>
+        
+        <script src="<?php echo (get_template_directory_uri() . "/theme-content/javascript/size.js"); ?>">
+        </script>
 
 
-<script> 
-    colorUI("<?php echo get_template_directory_uri() . "/content/settings/some.json" ?>");
-</script>
+        <script src="<?php echo (get_template_directory_uri() . "/theme-content/javascript/ui.js"); ?>">
+            loadUI();
+        </script>
 
+        <script> 
+            overlayUI("<?php echo get_template_directory_uri() . "/configuration/ui.json" ?>");
+        </script>
 
+    <?php endif; ?>
 </html>

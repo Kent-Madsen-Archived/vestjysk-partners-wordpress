@@ -360,7 +360,22 @@ class bootstrap_social_menu_walker extends bootstrap_base_menu_walker
         {    
                 $this->linkId = $this->linkId + 1;
 
-                $output .= "<a class='some-link some-link-" . strval($this->linkId) . "' href='" . $permalink . "'>";
+                $domain_name = parse_url($permalink, PHP_URL_HOST);
+
+                $output .= "<a class='some-link some-link-" . strval($this->linkId) . " ";
+
+                if($domain_name === "www.facebook.com")
+                {
+                    $output .= 'some-facebook';
+                }
+
+                if($domain_name === "www.linkedin.com")
+                {
+                    $output .= 'some-linkedin';
+                }
+                
+
+                $output .= "' href='" . $permalink . "'>";
         } 
         else 
         {

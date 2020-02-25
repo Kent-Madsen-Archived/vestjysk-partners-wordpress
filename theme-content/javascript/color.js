@@ -1,3 +1,4 @@
+/**
 function colorUI(jsonUrl)
 {
     axios.get(jsonUrl).then(resp => {
@@ -78,3 +79,9 @@ function applyColor(name, inactive, hover, active)
     //console.log(css);
 
 }
+
+        <script> 
+            colorUI("<?php echo get_template_directory_uri() . "/configuration/some.json" ?>");
+        </script>
+
+ */

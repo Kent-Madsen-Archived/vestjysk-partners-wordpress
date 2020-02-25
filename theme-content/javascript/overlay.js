@@ -21,8 +21,8 @@ function applyOverlay( setting )
   //  console.log(setting);
 
     var element = document.getElementById( setting.identifier );
-    console.log(element);
-    console.log(setting);
+    //console.log(element);
+    //console.log(setting);
 
 //    console.log(element);
 
@@ -44,7 +44,7 @@ function applyOverlay( setting )
         }
     }
 
-    console.log(chosenBackground);
+    //console.log(chosenBackground);
     element.className += ' '.concat(chosenBackground);
     
 }
